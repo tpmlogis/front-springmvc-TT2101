@@ -1,7 +1,5 @@
-spring-mvc-jpa-templates-TT210
-==============================
-
-Spring MVC + JPA templates for Telosys Tools v2.1.0
+Bundle for Java Web Application based on Spring MVC (Telosys Tools v2.1.0)
+==========================================================================
 
 Description
 ----------
@@ -21,8 +19,3 @@ Presentation layer:
 Business logic layer: 
 - Services injected by Spring IOC
 
-
-Tutorial
----
-
-- [HOWTO](doc/HOWTO.md)
