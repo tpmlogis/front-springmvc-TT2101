@@ -64,7 +64,7 @@ import ${ENTITY_PKG}.$ref;
 #end
 
 //--- Services 
-import org.demo.business.service.${entity.name}Service;
+import ${ROOT_PKG}.business.service.${entity.name}Service;
 #foreach( $ref in $referencedEntities )
 #if ( $ref != ${entity.name} )## to avoid multiple imports for the same service
 import ${ROOT_PKG}.business.service.${ref}Service;
