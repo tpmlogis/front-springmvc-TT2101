@@ -72,7 +72,7 @@ public abstract class AbstractController {
 		if(customDateEditor == null) {
 			String dateFormatPattern = messageSource.getMessage(DATE_FORMAT_PATTERN, null, locale);
 			SimpleDateFormat dateFormat = new SimpleDateFormat(dateFormatPattern);
-			customDateEditor = new CustomDateEditor(dateFormat, false);
+			customDateEditor = new CustomDateEditor(dateFormat, true);
 			customDateEditorByLocales.put(locale, customDateEditor);
 		}
 		return customDateEditor;
