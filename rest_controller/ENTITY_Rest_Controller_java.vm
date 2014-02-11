@@ -58,7 +58,7 @@ public class ${entity.name}RestController
 	private ${entity.name}Service ${uncapitalizedEntityName}Service;
 	
 	@RequestMapping(
-			method=RequestMethod.GET,
+			method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
 	@ResponseBody
@@ -67,7 +67,7 @@ public class ${entity.name}RestController
 	}
 
 	@RequestMapping( value="${pkPath}",
-			method=RequestMethod.GET,
+			method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
 	@ResponseBody
@@ -76,7 +76,7 @@ public class ${entity.name}RestController
 	}
 	
 	@RequestMapping(
-			method=RequestMethod.POST,
+			method = RequestMethod.POST,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
 	@ResponseBody
@@ -85,7 +85,7 @@ public class ${entity.name}RestController
 	}
 
 	@RequestMapping(
-			method=RequestMethod.PUT,
+			method = RequestMethod.PUT,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
 	@ResponseBody
@@ -94,7 +94,7 @@ public class ${entity.name}RestController
 	}
 
 	@RequestMapping( value="${pkPath}",
-			method=RequestMethod.DELETE,
+			method = RequestMethod.DELETE,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
 	@ResponseBody
