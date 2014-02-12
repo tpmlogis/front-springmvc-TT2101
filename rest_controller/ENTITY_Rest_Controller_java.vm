@@ -84,12 +84,12 @@ public class ${entity.name}RestController
 		return ${uncapitalizedEntityName}Service.create(${uncapitalizedEntityName});
 	}
 
-	@RequestMapping(
+	@RequestMapping( value="${pkPath}",
 			method = RequestMethod.PUT,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public ${entity.name} update(@RequestBody ${entity.name} ${uncapitalizedEntityName}) {
+	public ${entity.name} update(${pkPathVariables}, @RequestBody ${entity.name} ${uncapitalizedEntityName}) {
 		return ${uncapitalizedEntityName}Service.update(${uncapitalizedEntityName});
 	}
 
