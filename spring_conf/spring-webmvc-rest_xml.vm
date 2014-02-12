@@ -18,4 +18,11 @@
 	<!-- Also, support for JSR-303 Bean Validation is enabled by this tag. -->
     <mvc:annotation-driven />
 
+	<!-- Application Message Bundle -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="WEB-INF/i18n/messages,WEB-INF/i18n/application"/>
+		<property name="fallbackToSystemLocale" value="false"/>
+		<property name="cacheSeconds" value="3000"/>
+	</bean>
+
 </beans>
