@@ -51,7 +51,7 @@ import ${ROOT_PKG}.business.service.${entity.name}Service;
  * Spring MVC controller for '${entity.name}' management.
  */
 @Controller
-@RequestMapping(value="/rest/${uncapitalizedEntityName}")
+@RequestMapping(value="/${uncapitalizedEntityName}")
 public class ${entity.name}RestController
 {
 	@Resource
