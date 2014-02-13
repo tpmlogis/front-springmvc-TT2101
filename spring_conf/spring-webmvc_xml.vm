@@ -12,7 +12,6 @@
 		http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 	<context:component-scan base-package="${ROOT_PKG}.web" />
-	<context:component-scan base-package="${ROOT_PKG}.rest" />
 
     <bean id="applicationConversionService" class="${ROOT_PKG}.web.convert.ConversionServiceFactoryBean"/>
 
