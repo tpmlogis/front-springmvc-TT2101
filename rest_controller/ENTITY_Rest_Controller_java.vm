@@ -31,6 +31,7 @@
  */
 package ${target.javaPackageFromFolder($SRC)};
 
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -46,18 +47,32 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import ${ENTITY_PKG}.${entity.name};
 import ${ROOT_PKG}.business.service.${entity.name}Service;
+import ${ROOT_PKG}.web.listitem.${entity.name}ListItem;
 
 /**
  * Spring MVC controller for '${entity.name}' management.
  */
 @Controller
-@RequestMapping(value="/${uncapitalizedEntityName}")
 public class ${entity.name}RestController
 {
 	@Resource
 	private ${entity.name}Service ${uncapitalizedEntityName}Service;
 	
-	@RequestMapping(
+	@RequestMapping( value="/items/${uncapitalizedEntityName}",
+			method = RequestMethod.GET,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public List<${entity.name}ListItem> findAllAsListItems() {
+		List<${entity.name}> list = ${uncapitalizedEntityName}Service.findAll();
+		List<${entity.name}ListItem> items = new LinkedList<${entity.name}ListItem>();
+		for ( ${entity.name} ${uncapitalizedEntityName} : list ) {
+			items.add(new ${entity.name}ListItem( ${uncapitalizedEntityName} ) );
+		}
+		return items;
+	}
+	
+	@RequestMapping( value="/${uncapitalizedEntityName}",
 			method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
@@ -66,7 +81,7 @@ public class ${entity.name}RestController
 		return ${uncapitalizedEntityName}Service.findAll();
 	}
 
-	@RequestMapping( value="${pkPath}",
+	@RequestMapping( value="/${uncapitalizedEntityName}/${pkPath}",
 			method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
@@ -75,7 +90,7 @@ public class ${entity.name}RestController
 		return ${uncapitalizedEntityName}Service.findById(${pkElementsVariables});
 	}
 	
-	@RequestMapping(
+	@RequestMapping( value="/${uncapitalizedEntityName}",
 			method = RequestMethod.POST,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
@@ -84,7 +99,7 @@ public class ${entity.name}RestController
 		return ${uncapitalizedEntityName}Service.create(${uncapitalizedEntityName});
 	}
 
-	@RequestMapping( value="${pkPath}",
+	@RequestMapping( value="/${uncapitalizedEntityName}/${pkPath}",
 			method = RequestMethod.PUT,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
@@ -93,7 +108,7 @@ public class ${entity.name}RestController
 		return ${uncapitalizedEntityName}Service.update(${uncapitalizedEntityName});
 	}
 
-	@RequestMapping( value="${pkPath}",
+	@RequestMapping( value="/${uncapitalizedEntityName}/${pkPath}",
 			method = RequestMethod.DELETE,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
