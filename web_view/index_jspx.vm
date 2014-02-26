@@ -1,4 +1,3 @@
-#set( $tools = $loader.newInstance("Tools") )
 ##--------------------------------------------------------------------------------------------------------
 #set( $_ = "$" )
 <div xmlns:spring="http://www.springframework.org/tags" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
@@ -14,7 +13,7 @@
       
 		<ul class="entity">
 #foreach( $entity in $selectedEntities )
-            <li><a href="${tools.uncapitalize($entity.name)}">${entity.name}</a></li>
+            <li><a href="${fn.uncapitalize($entity.name)}">${entity.name}</a></li>
 #end
 	    </ul>
 

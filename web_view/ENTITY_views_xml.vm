@@ -1,6 +1,5 @@
 #set( $nameLC = ${entity.name.toLowerCase()} )
-#set( $tools = $loader.newInstance("Tools") )
-#set( $name = $tools.uncapitalize($entity.name) )
+#set( $name = $fn.uncapitalize($entity.name) )
 ##--------------------------------------------------------------------------------------------------------
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration

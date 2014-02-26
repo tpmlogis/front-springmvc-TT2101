@@ -1,5 +1,5 @@
 #set( $tools = $loader.newInstance("Tools") )
-#set( $uncapitalizedEntityName = $tools.uncapitalize($entity.name) )
+#set( $uncapitalizedEntityName = $fn.uncapitalize($entity.name) )
 #set( $_= "$" )
 ##--------------------------------------------------------------------------------------------------------
 ##--------------------------------------------------------------------------------------------------------
@@ -121,7 +121,7 @@
 							<!-- "DELETE" button ( HREF link ) -->
 ##							<s:url var="delete${entity.name}Url" value="/${uncapitalizedEntityName}/delete${keyURLPath}"/>
 ##							<a role="button" class="btn btn-danger btn-block" href="${_}{delete${entity.name}Url}"><s:message code="delete"/></a>
-							<s:url var="deleteButtonURL" value="/${uncapitalizedEntityName}/delete/$tools.keyInExpressionLanguage($entity, ${uncapitalizedEntityName}, '/')" />
+							<s:url var="deleteButtonURL" value="/${uncapitalizedEntityName}/delete/${entity.keyAttributesNamesAsString("/","${_}{$uncapitalizedEntityName.", '}')}" />
 							<a role="button" class="btn btn-danger btn-block" href="${_}{deleteButtonURL}"><s:message code="delete"/></a>
 						</c:if>
 					</div>

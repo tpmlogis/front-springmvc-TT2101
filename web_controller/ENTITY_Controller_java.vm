@@ -1,5 +1,5 @@
 #set( $tools = $loader.newInstance("Tools") )
-#set( $uncapitalizedEntityName = $tools.uncapitalize($entity.name) )
+#set( $uncapitalizedEntityName = $fn.uncapitalize($entity.name) )
 ## --- Primary Key arguments by getters, e.g. "review.getCustomerCode(), review.getBookId()"
 #set( $pkElementsGetters = $fn.argumentsListWithGetter($uncapitalizedEntityName, $entity.keyAttributes) )
 ## --- Primary Key arguments, e.g. "customerCode, bookId"
@@ -104,7 +104,7 @@ public class ${entity.name}Controller extends AbstractController
 #foreach( $ref in $referencedEntities )
 #if ( $ref != ${entity.name} )## to avoid multiple declarations for the same service
 	@Resource
-    private ${ref}Service ${tools.uncapitalize(${ref})}Service; // Injected by Spring
+    private ${ref}Service ${fn.uncapitalize(${ref})}Service; // Injected by Spring
 #end
 #end
 
@@ -126,10 +126,10 @@ public class ${entity.name}Controller extends AbstractController
 	 * @param model
 	 */
 	private void populateListOf${ref}Items(Model model) {
-		List<${ref}> list = ${tools.uncapitalize(${ref})}Service.findAll();
+		List<${ref}> list = ${fn.uncapitalize(${ref})}Service.findAll();
 		List<${ref}ListItem> items = new LinkedList<${ref}ListItem>();
-		for ( ${ref} $tools.uncapitalize(${ref}) : list ) {
-			items.add(new ${ref}ListItem( $tools.uncapitalize(${ref}) ) );
+		for ( ${ref} $fn.uncapitalize(${ref}) : list ) {
+			items.add(new ${ref}ListItem( $fn.uncapitalize(${ref}) ) );
 		}
 		model.addAttribute("listOf${ref}Items", items ) ;
 	}

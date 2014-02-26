@@ -1,5 +1,4 @@
-#set( $tools = $loader.newInstance("Tools") )
-#set( $uncapitalizedEntityName = $tools.uncapitalize($entity.name) )
+#set( $uncapitalizedEntityName = $fn.uncapitalize($entity.name) )
 ## -----------------------------------------------------------------------------------------------------------------------------
 ## --- Primary Key arguments by getters, e.g. "review.getCustomerCode(), review.getBookId()"
 #set( $pkElementsGetters = $fn.argumentsListWithGetter($uncapitalizedEntityName, $entity.keyAttributes) )
