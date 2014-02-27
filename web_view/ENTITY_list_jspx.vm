@@ -12,7 +12,7 @@
 ## Data fields = fields not in Primary Key and not in selected Links    
 #set( $dataFields = $entity.getAttributesByCriteria( $const.NOT_KEY, $const.NOT_IN_SELECTED_LINKS ) )
 ##--------------------------------------------------------------------------------------------------------
-## #set( $itemVariable = $entity.name.toLowerCase() )
+## #set( $itemVariable = $fn.uncapitalize($entity.name) )
 #set( $itemVariable = $fn.uncapitalize($entity.name) )
 ##--------------------------------------------------------------------------------------------------------
 <jsp:output omit-xml-declaration="yes"/>

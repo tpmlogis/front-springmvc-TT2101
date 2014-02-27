@@ -1,4 +1,4 @@
-#set( $nameLC = ${entity.name.toLowerCase()} )
+#set( $nameLC = ${fn.uncapitalize($entity.name)} )
 #set( $name = $fn.uncapitalize($entity.name) )
 ##--------------------------------------------------------------------------------------------------------
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
