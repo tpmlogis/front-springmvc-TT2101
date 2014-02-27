@@ -13,3 +13,7 @@
 .languages {
 	float: right;
 }
+.logo {
+	background: url("../images/logo.png") 0 5px no-repeat;
+	padding-left: 97px;
+}
