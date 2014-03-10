@@ -1,4 +1,4 @@
-#set( $tools = $loader.newInstance("Tools") )
+## #set( $tools = $loader.newInstance("Tools") )
 #set( $uncapitalizedEntityName = $fn.uncapitalize($entity.name) )
 #set( $_= "$" )
 ##--------------------------------------------------------------------------------------------------------
@@ -46,9 +46,16 @@
 #set($messageCode = "${uncapitalizedEntityName}.${field.name}" )
 #set($maxLength   = $field.guiMaxLength )
 ## Is this field referenced another entity ? Is it a Foreign Key ? ( if Yes => a combobox will be used )
+#* 
 #set($referencedEntityTypes = $tools.referencedEntityTypes($entity,$field) )
 #if( $referencedEntityTypes.size() > 0 )
 #set($listOfItemsVarName = "listOf${referencedEntityTypes.get(0)}Items" ) ## If many, use the 1st one
+#else
+#set($listOfItemsVarName = "" ) 
+#end
+*# 
+#if( $field.isReferencingAnotherEntity() )
+#set($listOfItemsVarName = "listOf${field.referencedEntityType}Items" ) ## If many, use the 1st one
 #else
 #set($listOfItemsVarName = "" ) 
 #end

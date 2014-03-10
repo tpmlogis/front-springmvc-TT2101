@@ -1,4 +1,4 @@
-#set( $tools = $loader.newInstance("Tools") )
+## #set( $tools = $loader.newInstance("Tools") )
 #set( $uncapitalizedEntityName = $fn.uncapitalize($entity.name) )
 ## --- Primary Key arguments by getters, e.g. "review.getCustomerCode(), review.getBookId()"
 #set( $pkElementsGetters = $fn.argumentsListWithGetter($uncapitalizedEntityName, $entity.keyAttributes) )
@@ -24,8 +24,10 @@
 ## // ${DOLLAR}pkPathVariables = "$pkPathVariables"
 ##
 ## --- Referenced entities (e.g. "Book", "Country", "Author", ... )
-#set( $referencedEntities = $tools.referencedEntityTypes($entity, $entity.attributes) )## All referenced entities (PK and NON PK)
-#set( $referencedNonPKEntities = $tools.referencedEntityTypes($entity, $entity.nonKeyAttributes) )## Entities referenced by NON PK fields
+## #set( $referencedEntities = $tools.referencedEntityTypes($entity, $entity.attributes) )## All referenced entities (PK and NON PK)
+## #set( $referencedNonPKEntities = $tools.referencedEntityTypes($entity, $entity.nonKeyAttributes) )## Entities referenced by NON PK fields
+#set( $referencedEntities = $entity.referencedEntityTypes() )## All referenced entities (PK and NON PK)
+#set( $referencedNonPKEntities = $entity.referencedEntityTypes($entity.nonKeyAttributes) )## Entities referenced by NON PK fields
 ## -----------------------------------------------------------------------------------------------------------------------------
 /*
  * Created on $today.date ( Time $today.time )
