@@ -260,7 +260,8 @@ public class ${entity.name}Controller extends AbstractController
 		try {
 			if (!bindingResult.hasErrors()) {
 				//--- Perform database operations
-				${uncapitalizedEntityName}Service.update(${uncapitalizedEntityName}); 
+				${entity.name} ${uncapitalizedEntityName}Saved = ${uncapitalizedEntityName}Service.update(${uncapitalizedEntityName});
+				model.addAttribute(MAIN_ENTITY_NAME, ${uncapitalizedEntityName}Saved);
 				//--- Set the result message
 				messageHelper.addMessage(redirectAttributes, new Message(MessageType.SUCCESS,"save.ok"));
 				log("Action 'update' : update done - redirect");
@@ -292,6 +293,8 @@ public class ${entity.name}Controller extends AbstractController
 		log("Action 'delete'" );
 		try {
 			${uncapitalizedEntityName}Service.delete( ${pkElementsVariables} );
+			//--- Set the result message
+			messageHelper.addMessage(redirectAttributes, new Message(MessageType.SUCCESS,"delete.ok"));	
 		} catch(Exception e) {
 			messageHelper.addException(redirectAttributes, "${uncapitalizedEntityName}.error.delete", e);
 		}
