@@ -85,8 +85,8 @@ import ${ROOT_PKG}.web.listitem.${ref}ListItem;
  */
 @Controller
 @RequestMapping("/$uncapitalizedEntityName")
-public class ${entity.name}Controller extends AbstractController 
-{
+public class ${entity.name}Controller extends AbstractController {
+
 	//--- Variables names ( to be used in JSP with Expression Language )
 	private static final String MAIN_ENTITY_NAME = "${uncapitalizedEntityName}";
 	private static final String MAIN_LIST_NAME   = "list";

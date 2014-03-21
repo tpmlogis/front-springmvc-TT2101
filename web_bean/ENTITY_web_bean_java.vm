@@ -61,15 +61,13 @@ $beanValidation.annotations(4,$field)
     //----------------------------------------------------------------------
 #foreach( $field in $entity.keyAttributes )
 #if ( $field.setter )
-    public void ${field.setter}( $field.formattedType(0) $field.name )
-    {
+    public void ${field.setter}( $field.formattedType(0) $field.name ) {
         this.$field.name = $field.name ;
     }
 
 #end
 #if ( $field.getter )
-    public $field.formattedType(0) ${field.getter}()
-    {
+    public $field.formattedType(0) ${field.getter}() {
         return this.$field.name;
     }
 
@@ -81,14 +79,12 @@ $beanValidation.annotations(4,$field)
     //----------------------------------------------------------------------
 #foreach( $field in $dataFields )
 #if ( $field.setter )
-    public void ${field.setter}( $field.formattedType(0) $field.name )
-    {
+    public void ${field.setter}( $field.formattedType(0) $field.name ) {
         this.$field.name = $field.name;
     }
 #end
 #if ( $field.getter )
-    public $field.formattedType(0) ${field.getter}()
-    {
+    public $field.formattedType(0) ${field.getter}() {
         return this.$field.name;
     }
 #end
