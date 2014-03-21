@@ -113,7 +113,9 @@ public abstract class AbstractController {
 		int n = 0 ;
 		for (Object segment : pathSegments) {
 			n++ ;
-			if (n > 1) sb.append(URI_SEPARATOR);
+			if (n > 1) { 
+				sb.append(URI_SEPARATOR);
+			}
 			//--- encode 1 segment
 			try {
 				String encodedSegment = UriUtils.encodePathSegment(segment.toString(), characterEncoding);
