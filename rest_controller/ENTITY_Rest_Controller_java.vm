@@ -53,6 +53,7 @@ import ${ROOT_PKG}.web.listitem.${entity.name}ListItem;
  */
 @Controller
 public class ${entity.name}RestController {
+
 	@Resource
 	private ${entity.name}Service ${uncapitalizedEntityName}Service;
 	
