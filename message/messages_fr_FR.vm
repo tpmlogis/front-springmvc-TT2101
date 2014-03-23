@@ -15,11 +15,13 @@ welcome_h3=Bienvenue sur {0}
 welcome_text=Bienvenue
 welcome.entite.list=Entit\u00e9s
 back.welcome=Retour \u00e0 la page d'accueil
+logout=Se d\u00e9connecter
 
 ${SHARP}----- Messages for actions
 create=Cr\u00e9er
 edit=Modifier
 delete=Supprimer
+delete.ok=Suppression effectu\u00e9e
 save=Enregistrer
 save.ok=Enregistrement effectu\u00e9
 list=Liste
