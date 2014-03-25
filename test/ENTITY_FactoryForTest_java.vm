@@ -25,7 +25,7 @@ ${methodName}#end
 ## ------------------------------------------------------------------
 package ${target.javaPackageFromFolder($TEST_SRC)};
 
-import org.bookstore.bean.${entity.name};
+import ${ENTITY_PKG}.${entity.name};
 
 public class ${entity.name}FactoryForTest {
 
