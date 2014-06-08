@@ -67,6 +67,7 @@
 					<li><a href="#">Messages</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right languages">
+					<li><a class="navbar-brand" href="?lang=ko_KR"><span class="glyphicon glyphicon-th-large"><jsp:text /></span>Korean</a></li>
 					<li><a class="navbar-brand" href="?lang=en_US"><span class="glyphicon glyphicon-th-large"><jsp:text /></span>English</a></li>
 					<li><a class="navbar-brand" href="?lang=fr_FR"><span class="glyphicon glyphicon-th-large"><jsp:text /></span>Français</a></li>
 				</ul>
