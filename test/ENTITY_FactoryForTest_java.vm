@@ -26,6 +26,7 @@ ${methodName}#end
 package ${target.javaPackageFromFolder($TEST_SRC)};
 
 import ${ENTITY_PKG}.${entity.name};
+import java.util.Date;
 
 public class ${entity.name}FactoryForTest {
 
