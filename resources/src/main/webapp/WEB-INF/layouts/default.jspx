@@ -54,14 +54,10 @@
 	<nav class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 				</a>
 				<spring:url value="/" var="url_home" />
-				<a class="navbar-brand logo" href="${url_home}">
-					<spring:message code="back.welcome" />
+				<a class="navbar-brand logo" href="${url_home}"> <spring:message code="back.welcome" />
 				</a>
 			</div>
 			<div class="navbar-collapse collapse" id="navbar-main">
