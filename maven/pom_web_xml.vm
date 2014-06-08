@@ -39,7 +39,7 @@
 			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
-				<version>1.0.1.Final</version>
+				<version>${DOLLAR}{wildfly-plugin-version}</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
