@@ -32,6 +32,7 @@ package ${target.javaPackageFromFolder($SRC)};
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Date;
 
 import javax.annotation.Resource;
 
