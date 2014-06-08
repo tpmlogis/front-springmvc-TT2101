@@ -57,7 +57,7 @@
 ##							<s:url var="edit${entity.name}Url" value="/${itemVariable}$keyURLPath"/>
 							<s:url var="url_update" value="/${itemVariable}/form/${entity.keyAttributesNamesAsString("/", "${_}{$itemVariable.", "}")}"/>
 							<s:url var="url_delete" value="/${itemVariable}/delete/${entity.keyAttributesNamesAsString("/", "${_}{$itemVariable.", "}")}"/>
-							<td>
+							<td width="150">
 								<div class="btn-group btn-group-justified">
 									<a class="btn btn-primary btn-xs" href="${_}{url_update}"><s:message code="edit"/></a>
 									<a class="btn btn-primary btn-xs" href="${_}{url_delete}"><s:message code="delete"/></a>
